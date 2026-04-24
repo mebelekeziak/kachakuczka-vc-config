@@ -1,0 +1,8 @@
+*.log
+*.zip
+ModuleManager.ConfigCache
+ModuleManager.ConfigSHA
+ModuleManager.Physics
+ModuleManager.TechTree
+Thumbs.db
+.DS_Store
