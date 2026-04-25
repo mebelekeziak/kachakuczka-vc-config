@@ -46,7 +46,9 @@ It then adds three new V5 raymarched Earth layers:
 - `SolVC-Earth-MidBrokenBands`
 - `SolVC-Earth-HighCirrus`
 
-Auroras, city lights, shadows, wet surfaces, Scatterer, Parallax, Kopernicus and non-Earth planet clouds are left untouched.
+It also raises the shared EVE raymarched-cloud quality preset from `temporalUpscaling = x32` to `x16`, with a higher light-volume resolution, to reduce blocky ray reconstruction artifacts.
+
+Auroras, city lights, shadows, wet surfaces, Scatterer, Parallax, Kopernicus and non-Earth planet cloud definitions are left untouched.
 
 ## Quick tuning
 
@@ -56,6 +58,7 @@ Open `SolVolumetricClouds.cfg` and search for these values:
 - Density/opacity: `_Color`, `density`, `coverageCurve`
 - Motion/time progression: `speed`, `detailSpeed`, `upwardsCloudSpeed`
 - Orbit visibility/detail: `_DetailScale`, `_DetailDist`, `scaledFadeStartAltitude`, `scaledFadeEndAltitude`
+- Global ray quality: `temporalUpscaling`, `horizontalResolution`, `directLightTimeSlicing`
 - Performance: `baseStepSize`, `maxStepSize`, `lightMarchSteps`, `lightMarchDistance`
 
 For more FPS, first increase `baseStepSize` on the lower and mid layers, then reduce `lightMarchSteps`.
