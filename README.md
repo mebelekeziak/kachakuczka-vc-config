@@ -46,7 +46,7 @@ It then adds three new V5 raymarched Earth layers:
 - `SolVC-Earth-MidBrokenBands`
 - `SolVC-Earth-HighCirrus`
 
-It also raises the shared EVE raymarched-cloud quality preset from `temporalUpscaling = x32` to `x8`, with a higher light-volume resolution and faster direct-light updates, to reduce moving-camera reconstruction artifacts around cloud edges.
+It also raises the shared EVE raymarched-cloud quality preset from `temporalUpscaling = x32` to `x16`, with a higher light-volume resolution, to reduce moving-camera reconstruction artifacts without the heavy cost of the `x8` tier.
 
 For the sky itself, it enables Scatterer temporal anti-aliasing, prevents Scatterer from disabling TAA during short frame-rate dips, and disables the raymarched cloud-godray pass. That pass is the common source of sky shimmer near cloud silhouettes; terrain godrays remain enabled.
 
