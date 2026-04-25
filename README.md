@@ -34,7 +34,7 @@ Restart KSP after installing or editing the config so ModuleManager can rebuild 
 
 ## What it changes
 
-The ModuleManager patch runs only when Sol is set to `SystemScale = Quarter`. It removes these bundled Sol Earth cloud objects:
+The ModuleManager cleanup runs only when Sol is set to `SystemScale = Quarter`. It removes these bundled Sol Earth cloud objects, plus any stale duplicate `SolVC-Earth-*` objects:
 
 - `Earth-TropicalCumulus`
 - `Earth-TemperateCumulus`
