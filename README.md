@@ -46,6 +46,8 @@ It then adds three new V5 raymarched Earth layers:
 - `SolVC-Earth-MidBrokenBands`
 - `SolVC-Earth-HighCirrus`
 
+The layer heights are compressed for quarter scale: low weather sits roughly from `0.95-5.2 km`, the broken mid deck from `4.3-9.0 km`, and cirrus from `7.6-10.4 km`. The 2D support shells are intentionally stronger than the first pass so the cloud field stays visible from orbit while the volumetric layer gives it depth near flight camera range.
+
 It also raises the shared EVE raymarched-cloud quality preset from `temporalUpscaling = x32` to `x16`, with a higher light-volume resolution, to reduce moving-camera reconstruction artifacts without the heavy cost of the `x8` tier.
 
 For the sky itself, it enables Scatterer temporal anti-aliasing, prevents Scatterer from disabling TAA during short frame-rate dips, and disables the raymarched cloud-godray pass. That pass is the common source of sky shimmer near cloud silhouettes; terrain godrays remain enabled.
