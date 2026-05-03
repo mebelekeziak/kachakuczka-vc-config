@@ -46,7 +46,7 @@ It then adds three new V5 raymarched Earth layers:
 - `SolVC-Earth-MidBrokenBands`
 - `SolVC-Earth-HighCirrus`
 
-The layer heights are compressed for quarter scale: low weather sits roughly from `0.95-5.2 km`, the broken mid deck from `4.3-9.0 km`, and cirrus from `7.6-10.4 km`. The 2D support shells are intentionally stronger than the first pass so the cloud field stays visible from orbit while the volumetric layer gives it depth near flight camera range.
+The layer heights are compressed for quarter scale but kept visibly separated: low weather sits roughly from `0.95-6.9 km`, the broken mid deck from `6.1-13.2 km`, and cirrus from `10.2-13.8 km`. The 2D support shells stay visible from orbit, with the middle shell restrained so the low deck and high cirrus do not collapse into one dense band.
 
 It also raises the shared EVE raymarched-cloud quality preset from `temporalUpscaling = x32` to `x16`, with a higher light-volume resolution, to reduce moving-camera reconstruction artifacts without the heavy cost of the `x8` tier.
 
@@ -62,6 +62,7 @@ Open `SolVolumetricClouds.cfg` and search for these values:
 
 - Altitude: `altitude`, `minAltitude`, `maxAltitude`
 - Density/opacity: `_Color`, `density`, `coverageCurve`
+- Puffiness: `maxAltitude`, `densityCurve`, `baseNoiseTiling`, `erosionDepth`, `curlNoiseStrength`
 - Motion/time progression: `speed`, `detailSpeed`, `upwardsCloudSpeed`
 - Orbit visibility/detail: `_DetailScale`, `_DetailDist`, `scaledFadeStartAltitude`, `scaledFadeEndAltitude`
 - Global ray quality: `temporalUpscaling`, `horizontalResolution`, `directLightTimeSlicing`
